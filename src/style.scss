@@ -1,1 +1,202 @@
 @import "nulling_styles.scss";
+body{
+    overflow: hidden;
+    background: #FFFFFF;
+    font-family: 'Roboto';
+    font-size: 18px;
+    background: linear-gradient(90deg, #69b7eb, #b3dbd3, #f4d6db);
+}
+.container {
+    max-width: 350px;
+    margin: 30px auto;
+    min-height: 533px;
+    position: relative;
+}
+.main.blur{
+    filter: blur(3px);
+}
+.main{
+    background: #FFFFFF;
+    padding: 15px;
+    width: 100%;
+}
+.buttons {
+    max-width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 7px;
+		&_btnSettings {
+            padding: 0px 8px;
+            max-width: 98px;
+            height: 32px;
+		}
+		&_logOut {
+            padding: 0px 8px;
+            max-width: 66px;
+            height: 32px;
+		}
+}
+.btn {
+    background: #FFFFFF;
+    border: 1px solid black;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19px;
+    letter-spacing: 0em;
+    text-align: center;
+    transition: 0.2s all ease;
+}
+.btn:hover {
+    background: #969696;
+}
+.chat {
+    max-width: 100%;
+    height: 437px;
+    border: 1px solid #000000;
+    padding: 8px;
+    overflow: hidden auto;
+    margin-bottom: 10px;
+}
+.chat::-webkit-scrollbar {
+    height: 10px;
+    background-color: #FFFFFF;
+    width: 4px;
+}
+.chat::-webkit-scrollbar-thumb {
+    background-color: #969696;
+    border-radius: 5px;
+}
+
+.chatBox {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;  
+        &__nameInterlocutor {
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 19px;
+            margin-bottom: 4px;
+        }
+		&__massage-block {
+            border-radius: 5px;
+            max-width: 90%;
+            margin-bottom: 8px;
+            padding: 8px;
+            background: #E5E5E5;
+		}
+		&__text {
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 19px;
+            margin-bottom: 4px;
+		}
+		&__time {
+            font-family: Roboto;
+            font-size: 14px;
+            font-style: italic;
+            font-weight: 300;
+            line-height: 16px;
+            letter-spacing: 0em;
+            text-align: right;
+		}
+}
+.interlocutor {
+    align-self: flex-start;
+    background: #b3dbd3;
+}
+.my {
+    align-self: flex-end;
+    background: #f4d6db;
+}
+.sendMessage {
+    display: flex;
+		&__input {
+            border: 1px solid black;
+            min-height: 32px;
+            width: 100%;
+            padding: 0px 8px;
+            transition: 0.3s all ease;
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 19px;
+            letter-spacing: 0em;
+		}
+        &__input:focus {
+            border: 3px solid #2491eb;
+        }
+		&__btn {
+            width: 38px;
+            padding: 0px 8px;
+            min-height: 32px;
+            margin-left: 8px;
+		}
+}
+.cross {
+    display: inline-block;
+    padding: 3px;
+    cursor: pointer;
+    transform: rotate(-45deg);
+    user-select: none;
+    position: absolute;
+    right: 18px;
+    top: 13px;
+    opacity: 0.45;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 17px;
+    letter-spacing: 0em;
+}
+.cross:hover {
+    color: #636363;
+}
+.settings {
+    display: none;
+}
+.settings.active > :first-child{
+    margin-bottom: 16px;
+}
+.settings.active > :not(:last-child){
+    margin-bottom: 12px;
+}
+.settings.active{
+    display: block;
+    border: 1px solid black;
+    padding: 16px 14px;
+    z-index: 2;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    height: 319px;
+    background: #FFFFFF;
+    width: 273px;
+    &__title {
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 19px;
+        letter-spacing: 0em; 
+        margin-bottom: 16px;
+    }
+    &__subTitle {
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 19px;
+        letter-spacing: 0em;
+    }
+}
+.nameChoice {
+    display: flex;
+    &__input {
+        height: 32px;
+        border: 1px solid black;
+        width: 100%;
+        padding: 0px 6px;
+    }
+    &__btn {
+        margin-left: 8px;
+        width: 38px;
+        height: 32px;
+    }
+}
