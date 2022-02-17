@@ -16,12 +16,21 @@ PAGE.LOG_BTN.addEventListener('click', () => {
     PAGE.MAIN_WINDOW.classList.add('blur');
 });
 PAGE.EMAIL_FORM.addEventListener('submit', (e) => {
-    console.log('cliick');
     e.preventDefault();
     closeWindows();
     requestСode({email: PAGE.INPUT_EMAIL.value});
     PAGE.CODE_WINDOW.classList.add('active');
-})
+});
+PAGE.MESSAGE_BAR.addEventListener('submit', (e) => {
+    e.preventDefault();
+    if (!PAGE.INPUT_BAR.value) return;
+    let currentMessage = PAGE.TEMP.content.firstElementChild.cloneNode(true);
+    console.log(currentMessage.firstElementChild);
+    currentMessage.firstElementChild.innerHTML = PAGE.INPUT_BAR.value;
+    currentMessage.lastElementChild.innerHTML = getTime();
+    PAGE.CHAT_BOX.append(currentMessage);
+    PAGE.INPUT_BAR.value = "";
+});
 async function requestСode(email) {
     try {
         const response = await fetch(URL, {
@@ -42,4 +51,7 @@ function closeWindows() {
     PAGE.SETTINGS_WINDOW.classList.remove('active');
     PAGE.LOG_WINDOW.classList.remove('active');
     PAGE.CODE_WINDOW.classList.remove('active');
+}
+function getTime() {
+    return `${new Date().getHours()}:${new Date().getMinutes()}`
 }
