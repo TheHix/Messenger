@@ -202,19 +202,21 @@ body{
         height: 32px;
     }
 }
-.LogInOut {
-    display: none;
-}
-.LogInOut.active{
-    display: flex;
+.logWindow {
     justify-content: center;
     align-content: center;
     flex-direction: column;
+}
+.LogInOut {
+    display: none;
     &__subTitle {
         margin-bottom: 3px;
     }
 }
-.authorizationForm {
+.LogInOut.active{
+    display: flex;
+}
+.authorization {
     &__email {
         margin-bottom: 7px;
     }
@@ -222,4 +224,23 @@ body{
         min-height: 34px;
         width: 120px;
     }
+}
+.enterCode {
+    display: none;
+    &__subTitle {
+        margin-bottom: 3px;
+    }
+}
+.confirmationForm {
+    &__code {
+        margin-bottom: 8px;
+    }
+    &__btn {
+        padding: 0px 8px;
+        width: 62px;
+        height: 33px;
+    }
+}
+.enterCode.active {
+    display: flex;
 }

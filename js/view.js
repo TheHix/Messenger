@@ -5,7 +5,8 @@ export const PAGE = {
     EXIT_BTN: document.querySelectorAll('.cross'),
     LOG_BTN: document.querySelector('.buttons_logInOut'),
     LOG_WINDOW: document.querySelector('.LogInOut'),
-    EMAIL_FORM: document.querySelector('.authorizationForm'),
-    INPUT_EMAIL: document.querySelector('.authorizationForm__email')
+    EMAIL_FORM: document.querySelector('.LogInOut__authorizationForm.authorization'),
+    INPUT_EMAIL: document.querySelector('.authorization__email'),
+    CODE_WINDOW: document.querySelector('.enterCode'),
 };
 export const URL = 'https://chat1-341409.oa.r.appspot.com/api/user';

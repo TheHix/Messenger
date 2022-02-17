@@ -321,14 +321,7 @@ body {
   height: 32px;
 }
 
-.LogInOut {
-  display: none;
-}
-
-.LogInOut.active {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+.logWindow {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -339,14 +332,46 @@ body {
       -ms-flex-direction: column;
           flex-direction: column;
 }
-.LogInOut.active__subTitle {
+
+.LogInOut {
+  display: none;
+}
+.LogInOut__subTitle {
   margin-bottom: 3px;
 }
 
-.authorizationForm__email {
+.LogInOut.active {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.authorization__email {
   margin-bottom: 7px;
 }
-.authorizationForm__btn {
+.authorization__btn {
   min-height: 34px;
   width: 120px;
+}
+
+.enterCode {
+  display: none;
+}
+.enterCode__subTitle {
+  margin-bottom: 3px;
+}
+
+.confirmationForm__code {
+  margin-bottom: 8px;
+}
+.confirmationForm__btn {
+  padding: 0px 8px;
+  width: 62px;
+  height: 33px;
+}
+
+.enterCode.active {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }

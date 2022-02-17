@@ -79,13 +79,22 @@
                 </button>
             </form>
         </div>
-        <div class="LogInOut pop-up_window">
+        <div class="LogInOut pop-up_window logWindow">
             <div class="LogInOut__title title">Авторизация</div>
             <span class="LogInOut__cross cross">+</span>
             <div class = "LogInOut__subTitle subTitle">Почта:</div>
-            <form action="LogInOut__authorizationForm authorizationForm">
-                <input type="email" class="authorizationForm__email input">
-                <button class="authorizationForm__btn btn">Получить код</button>
+            <form action="#" class = "LogInOut__authorizationForm authorization">
+                <input type="email" class="authorization__email input">
+                <button class="authorization__btn btn">Получить код</button>
+            </form>
+        </div>
+        <div class="enterCode pop-up_window logWindow">
+            <div class="enterCode__title title">Подтверждение</div>
+            <span class="enterCode__cross cross">+</span>
+            <div class = "enterCode__subTitle subTitle">Код:</div>
+            <form action="#" class = "enterCode__confirmationForm confirmationForm">
+                <input type="text" class="confirmationForm__code input">
+                <button class="confirmationForm__btn btn">войти</button>
             </form>
         </div>
     </div>
