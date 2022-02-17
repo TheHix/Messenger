@@ -30,7 +30,7 @@ body{
             max-width: 98px;
             height: 32px;
 		}
-		&_logOut {
+		&_logInOut {
             padding: 0px 8px;
             max-width: 66px;
             height: 32px;
@@ -109,19 +109,22 @@ body{
     align-self: flex-end;
     background: #f4d6db;
 }
+.input {
+    border: 1px solid black;
+    width: 100%;
+    padding: 0px 8px;
+    transition: 0.3s all ease;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19px;
+    letter-spacing: 0em;
+    min-height: 32px;
+    padding: 0px 7px;
+}
 .sendMessage {
-    display: flex;
-		&__input {
-            border: 1px solid black;
-            min-height: 32px;
-            width: 100%;
-            padding: 0px 8px;
-            transition: 0.3s all ease;
-            font-size: 16px;
-            font-weight: 400;
-            line-height: 19px;
-            letter-spacing: 0em;
-		}
+        &__bar {
+            display: flex;
+        }
         &__input:focus {
             border: 3px solid #2491eb;
         }
@@ -139,7 +142,7 @@ body{
     transform: rotate(-45deg);
     user-select: none;
     position: absolute;
-    right: 18px;
+    right: 11px;
     top: 13px;
     opacity: 0.45;
     font-size: 24px;
@@ -156,13 +159,11 @@ body{
 .settings.active > :first-child{
     margin-bottom: 16px;
 }
-.settings.active > :not(:last-child){
+.settings.active > :not(:last-child) {
     margin-bottom: 12px;
 }
-.settings.active{
-    display: block;
+.pop-up_window {
     border: 1px solid black;
-    padding: 16px 14px;
     z-index: 2;
     position: absolute;
     left: 50%;
@@ -171,32 +172,54 @@ body{
     transform: translate(-50%, -50%);
     height: 319px;
     background: #FFFFFF;
-    width: 273px;
-    &__title {
-        font-size: 16px;
-        font-weight: 400;
-        line-height: 19px;
-        letter-spacing: 0em; 
-        margin-bottom: 16px;
-    }
-    &__subTitle {
-        font-size: 16px;
-        font-weight: 400;
-        line-height: 19px;
-        letter-spacing: 0em;
-    }
+    width: 80%;
+    padding: 16px 14px;
+}
+.settings.active{
+    display: block;
+    padding-top: 50px;
+}
+.title {
+    position: absolute;
+    left: 14px;
+    top: 16px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19px;
+    letter-spacing: 0em; 
+}
+.subTitle {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19px;
+    letter-spacing: 0em;
 }
 .nameChoice {
     display: flex;
-    &__input {
-        height: 32px;
-        border: 1px solid black;
-        width: 100%;
-        padding: 0px 6px;
-    }
     &__btn {
         margin-left: 8px;
         width: 38px;
         height: 32px;
+    }
+}
+.LogInOut {
+    display: none;
+}
+.LogInOut.active{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    &__subTitle {
+        margin-bottom: 3px;
+    }
+}
+.authorizationForm {
+    &__email {
+        margin-bottom: 7px;
+    }
+    &__btn {
+        min-height: 34px;
+        width: 120px;
     }
 }
