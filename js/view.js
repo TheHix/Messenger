@@ -11,6 +11,7 @@ export const PAGE = {
     TEMP: document.querySelector('#temp'),
     MESSAGE_BAR: document.querySelector('.sendMessage__bar'),
     INPUT_BAR: document.querySelector('.sendMessage__input'),
-    CHAT_BOX: document.querySelector('.chatBox')
+    CHAT_BOX: document.querySelector('.chatBox'),
+    MESSAGE_BODY: document.querySelector('.chat')
 };
 export const URL = 'https://chat1-341409.oa.r.appspot.com/api/user';
