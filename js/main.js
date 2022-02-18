@@ -58,7 +58,7 @@ async function requestAuthenticationCode(email) {
         console.error(error);
     }
 }
-async function requestUsername(name, token) {
+async function changeUsername(name, token) {
     try {
         const response = await fetch(URL, {
             method: 'PATCH',
