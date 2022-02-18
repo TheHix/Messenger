@@ -12,7 +12,7 @@ PAGE.SETTINGS_BTN.addEventListener('click', () => {
     PAGE.MAIN_WINDOW.classList.add('blur');
     PAGE.NAME_FORM.addEventListener('submit', (e) => {
         e.preventDefault();
-        requestUsername(PAGE.NAME_INPUT.value, Cookies.get('token'));
+        changeUsername(PAGE.NAME_INPUT.value, Cookies.get('token'));
     });
 });
 PAGE.LOG_BTN.addEventListener('click', () => {
