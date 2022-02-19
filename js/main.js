@@ -49,7 +49,7 @@ PAGE.MESSAGE_BAR.addEventListener('submit', (e) => {
 });
 async function requestAuthenticationCode(email) {
     try {
-        const response = await fetch(URL.GENERAL_INFO, {
+        const response = await fetch(API.GENERAL_URL, {
             method: 'POST',
             body: JSON.stringify(email),
             headers: {
@@ -65,7 +65,7 @@ async function requestAuthenticationCode(email) {
 }
 async function changeUsername(username, token) {
     try {
-        const response = await fetch(URL.GENERAL_INFO, {
+        const response = await fetch(API.GENERAL_URL, {
             method: 'PATCH',
             body: JSON.stringify({'name' : username}),
             headers: {
@@ -82,7 +82,7 @@ async function changeUsername(username, token) {
 }
 async function requestUsername(token) {
     try {
-        const response = await fetch(URL.PERSON_INFO, {
+        const response = await fetch(ALI.PERSON_URL, {
             method: 'GET',
             headers: {
                 'Authorization': `Bearer ${token}`

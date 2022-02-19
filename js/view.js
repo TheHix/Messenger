@@ -18,7 +18,7 @@ export const PAGE = {
     NAME_FORM: document.querySelector('.nameChoice'),
     NAME_INPUT: document.querySelector('.nameChoice__input')
 };
-export const URL = {
-    GENERAL_INFO: 'https://chat1-341409.oa.r.appspot.com/api/user',
-    PERSON_INFO: 'https://chat1-341409.oa.r.appspot.com/api/user/me'
+export const API = {
+    GENERAL_URL: 'https://chat1-341409.oa.r.appspot.com/api/user',
+    PERSON_URL: 'https://chat1-341409.oa.r.appspot.com/api/user/me'
 };
