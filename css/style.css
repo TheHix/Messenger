@@ -107,11 +107,13 @@ body {
           justify-content: space-between;
   margin-bottom: 7px;
 }
+
 .buttons_btnSettings {
   padding: 0px 8px;
   max-width: 98px;
   height: 32px;
 }
+
 .buttons_logInOut {
   padding: 0px 8px;
   max-width: 66px;
@@ -161,12 +163,14 @@ body {
       -ms-flex-pack: end;
           justify-content: end;
 }
+
 .chatBox__nameInterlocutor {
   font-size: 16px;
   font-weight: 500;
   line-height: 19px;
   margin-bottom: 4px;
 }
+
 .chatBox__massage-block {
   border-radius: 5px;
   max-width: 90%;
@@ -174,6 +178,7 @@ body {
   padding: 6px 12px;
   background: #e5e5e5;
 }
+
 .chatBox__text {
   word-break: break-all;
   font-size: 16px;
@@ -181,6 +186,7 @@ body {
   line-height: 19px;
   margin-bottom: 4px;
 }
+
 .chatBox__time {
   font-family: Roboto;
   font-size: 14px;
@@ -222,9 +228,11 @@ body {
   display: -ms-flexbox;
   display: flex;
 }
+
 .sendMessage__input:focus {
   border: 3px solid #2491eb;
 }
+
 .sendMessage__btn {
   width: 38px;
   padding: 0px 8px;
@@ -310,6 +318,7 @@ body {
   display: -ms-flexbox;
   display: flex;
 }
+
 .nameChoice__btn {
   margin-left: 8px;
   width: 38px;
@@ -331,6 +340,7 @@ body {
 .LogInOut {
   display: none;
 }
+
 .LogInOut__subTitle {
   margin-bottom: 3px;
 }
@@ -344,6 +354,7 @@ body {
 .authorization__email {
   margin-bottom: 7px;
 }
+
 .authorization__btn {
   min-height: 34px;
   width: 120px;
@@ -352,6 +363,7 @@ body {
 .enterCode {
   display: none;
 }
+
 .enterCode__subTitle {
   margin-bottom: 3px;
 }
@@ -359,6 +371,7 @@ body {
 .confirmationForm__code {
   margin-bottom: 8px;
 }
+
 .confirmationForm__btn {
   padding: 0px 8px;
   width: 62px;
@@ -370,3 +383,4 @@ body {
   display: -ms-flexbox;
   display: flex;
 }
+/*# sourceMappingURL=style.css.map */
