@@ -45,14 +45,17 @@ export const CHANGE = {
 const CONSTRUCT = {
     addMessage: function (text, name = '', extraClass = 'my', date) {
         let currentMessage = PAGE.TEMP.content.firstElementChild.cloneNode(true);
+
         currentMessage.classList.add(extraClass);
         currentMessage.children[0].innerHTML = name;
         currentMessage.children[1].innerHTML = text;
         currentMessage.children[2].innerHTML = this.getTime(date);
+
         PAGE.CHAT_BOX.append(currentMessage);
     },
     getTime: function (timeMessage) {
         const time = timeMessage === undefined ? new Date() : new Date(timeMessage);
+        
         const minutes = (time.getMinutes()) >= 10 ? time.getMinutes() : '0' + time.getMinutes();
         const hours = (time.getHours()) >= 10 ? time.getHours() : '0' + time.getHours();
     
