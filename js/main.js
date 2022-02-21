@@ -1,4 +1,4 @@
-import {PAGE, URL} from "./view.js";
+import {PAGE, API} from "./view.js";
 import Cookies from 'js-cookie';
 render();
 PAGE.EXIT_BTN.forEach((e) => {
@@ -58,7 +58,7 @@ async function requestAuthenticationCode(email) {
             },
         });
         const json = await response.json();
-        return JSON.stringify(json);
+        console.log(JSON.stringify(json));
     } catch (error) {
         console.error(error);
     }
@@ -82,7 +82,7 @@ async function changeUsername(username, token) {
 }
 async function requestUsername(token) {
     try {
-        const response = await fetch(ALI.PERSON_URL, {
+        const response = await fetch(API.PERSON_URL, {
             method: 'GET',
             headers: {
                 'Authorization': `Bearer ${token}`
@@ -100,14 +100,15 @@ function closeWindows() {
     PAGE.CODE_WINDOW.classList.remove('active');
 }
 function getTime() {
-    let minutes = new Date().getMinutes() % 10 >= 1 ? new Date().getMinutes() : '0' + new Date().getMinutes();
-    return `${new Date().getHours()}:${minutes}`;
+    let minutes = (new Date().getMinutes()) >= 10 ? new Date().getMinutes() : '0' + new Date().getMinutes();
+    let hours = (new Date().getHours()) >= 10 ? new Date().getHours() : '0' + new Date().getHours();
+    return `${hours}:${minutes}`;
 }
 function moveScroll() {
     PAGE.MESSAGE_BODY.scrollTop = PAGE.MESSAGE_BODY.scrollHeight;
 }
 function displayUsername(data) {
-    const username = data['name'] || 'Стив';
+    const username = data['name'] ?? 'Стив';
     PAGE.NAME_INPUT.value = username;
 }
 function render() {
