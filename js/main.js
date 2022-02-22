@@ -45,10 +45,8 @@ PAGE.CONFIRMATION_FORM.addEventListener('submit', (e) => {
 });
 PAGE.MESSAGE_BAR.addEventListener('submit', (e) => {
     e.preventDefault();
-
     if (!PAGE.INPUT_BAR.value) return;
     CONSTRUCT.addMessage(PAGE.INPUT_BAR.value);
-    
     moveScroll();
 
     PAGE.INPUT_BAR.value = "";

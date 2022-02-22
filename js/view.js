@@ -24,6 +24,7 @@ export const URL = {
     USER_ME: 'https://chat1-341409.oa.r.appspot.com/api/user/me',
     MESSAGE: 'https://chat1-341409.oa.r.appspot.com/api/messages/'
 };
+
 export const CHANGE = {
     displayUsername: function (data) {
         const username = data['name'] ?? 'Стив';
@@ -33,7 +34,7 @@ export const CHANGE = {
         PAGE.CHAT_BOX.innerHTML = "";
     
         for (let item of date){
-            CONSTRUCT.addMessage(item.message, item.username, 'interlocutor', item.createdAt);
+            CONSTRUCT.addMessage(item.message, item.createdAt, item.username, 'interlocutor');
         }
     },
     closeWindows: function () {
@@ -42,8 +43,8 @@ export const CHANGE = {
         PAGE.CODE_WINDOW.classList.remove('active');
     }
 };
-const CONSTRUCT = {
-    addMessage: function (text, name = '', extraClass = 'my', date) {
+export const CONSTRUCT = {
+    addMessage: function (text, date, name = '', extraClass = 'my') {
         let currentMessage = PAGE.TEMP.content.firstElementChild.cloneNode(true);
 
         currentMessage.classList.add(extraClass);
@@ -56,8 +57,8 @@ const CONSTRUCT = {
     getTime: function (timeMessage) {
         const time = timeMessage === undefined ? new Date() : new Date(timeMessage);
         
+        const hours = time.getHours();
         const minutes = (time.getMinutes()) >= 10 ? time.getMinutes() : '0' + time.getMinutes();
-        const hours = (time.getHours()) >= 10 ? time.getHours() : '0' + time.getHours();
     
         return `${hours}:${minutes}`;
     }
