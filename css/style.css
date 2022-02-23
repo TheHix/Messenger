@@ -92,7 +92,6 @@ body {
       -ms-flex-direction: column;
           flex-direction: column;
   margin: 0px auto;
-  position: relative;
   max-width: 350px;
   min-height: 533px;
   background: #ffffff;
@@ -287,18 +286,18 @@ body {
   margin-bottom: 12px;
 }
 
-.pop-up_window {
+.pop-up__window {
   border: 1px solid black;
   z-index: 2;
   position: absolute;
   left: 50%;
-  top: 50%;
+  top: 35%;
   margin-right: -50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
   height: 319px;
   background: #ffffff;
-  width: 80%;
+  width: 270px;
   padding: 16px 14px;
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;

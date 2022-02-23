@@ -6,16 +6,13 @@ body {
     font-size: 18px;
     background: linear-gradient(90deg, #69b7eb, #b3dbd3, #f4d6db);
 }
-
 .main.blur {
     filter: blur(3px);
 }
-
 .main {
     display: flex;
     flex-direction: column;
     margin: 0px auto;
-    position: relative;
     max-width: 350px;
     min-height: 533px;
     background: #ffffff;
@@ -186,18 +183,17 @@ body {
 .settings.active> :not(:last-child) {
     margin-bottom: 12px;
 }
-
-.pop-up_window {
+.pop-up__window {
     border: 1px solid black;
     z-index: 2;
     position: absolute;
     left: 50%;
-    top: 50%;
+    top: 35%;
     margin-right: -50%;
     transform: translate(-50%, -50%);
     height: 319px;
     background: #ffffff;
-    width: 80%;
+    width: 270px;
     padding: 16px 14px;
     transition: all 0.3s ease-in-out;
 }

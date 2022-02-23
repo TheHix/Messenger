@@ -1,4 +1,7 @@
 import {URL, CHANGE} from "./view.js";
+export function sendRequest(methid, ) {
+
+}
 export async function requestAuthenticationCode(email) {
     try {
         const response = await fetch(URL.USER, {

@@ -1,11 +1,13 @@
 export const PAGE = {
+    MODAl_WINDOWS: document.querySelectorAll('.pop-up__window'),
+    BTN: document.querySelectorAll('.openWindowBtn'),
     SETTINGS_BTN: document.querySelector('.buttons_btnSettings'),
     SETTINGS_WINDOW: document.querySelector('.settings'),
     MAIN_WINDOW:document.querySelector('.main'),
     EXIT_BTN: document.querySelectorAll('.cross'),
     LOG_BTN: document.querySelector('.buttons_logInOut'),
     LOG_WINDOW: document.querySelector('.LogInOut'),
-    EMAIL_FORM: document.querySelector('.LogInOut__authorizationForm.authorization'),
+    EMAIL_FORM: document.querySelector('.authorization'),
     INPUT_EMAIL: document.querySelector('.authorization__email'),
     CODE_WINDOW: document.querySelector('.enterCode'),
     CONFIRMATION_FORM:document.querySelector('.confirmationForm'),
@@ -37,11 +39,6 @@ export const CHANGE = {
             CONSTRUCT.addMessage(item.message, item.createdAt, item.username, 'interlocutor');
         }
     },
-    closeWindows: function () {
-        PAGE.SETTINGS_WINDOW.classList.remove('active');
-        PAGE.LOG_WINDOW.classList.remove('active');
-        PAGE.CODE_WINDOW.classList.remove('active');
-    }
 };
 export const CONSTRUCT = {
     addMessage: function (text, date, name = '', extraClass = 'my') {
