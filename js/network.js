@@ -1,7 +1,5 @@
-import {URL, CHANGE} from "./view.js";
-export function sendRequest(methid, ) {
-
-}
+import {URL} from "./view.js";
+import {renderMessage, renderUsername} from "./render.js";
 export async function requestAuthenticationCode(email) {
     try {
         const response = await fetch(URL.USER, {
@@ -13,7 +11,7 @@ export async function requestAuthenticationCode(email) {
             },
         });
         const json = await response.json();
-        return JSON.stringify(json);
+        console.log(JSON.stringify(json));
     } catch (error) {
         console.error(error);
     }
@@ -30,7 +28,7 @@ export async function changeUsername(username, token) {
             },
         });
         const json = await response.json();
-        return JSON.stringify(json);
+        console.log(JSON.stringify(json)); 
     } catch (error) {
         console.error(error);
     }
@@ -44,7 +42,7 @@ export async function requestUsername(token) {
             }
         });
         const json = await response.json();
-        CHANGE.displayUsername(json);
+        renderUsername(json);
     } catch (error) {
         console.error(error);
     }
@@ -58,7 +56,7 @@ export async function requestMessage(token) {
             }
         });
         const json = await response.json();
-        CHANGE.displayMessage(json.messages);
+        renderMessage(json);
     } catch (error) {
         console.error(error);
     }
