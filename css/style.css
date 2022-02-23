@@ -78,23 +78,31 @@ body {
   background: linear-gradient(90deg, #69b7eb, #b3dbd3, #f4d6db);
 }
 
-.container {
-  overflow: hidden;
-  max-width: 350px;
-  margin: 0 auto;
-  min-height: 533px;
-  position: relative;
-}
-
 .main.blur {
   -webkit-filter: blur(3px);
           filter: blur(3px);
 }
 
 .main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 0px auto;
+  position: relative;
+  max-width: 350px;
+  min-height: 533px;
   background: #ffffff;
   padding: 15px;
-  width: 100%;
+}
+
+@media screen and (max-width: 480px) {
+  .main {
+    min-height: 100vh;
+  }
 }
 
 .buttons {
@@ -143,6 +151,9 @@ body {
   padding: 8px;
   overflow: scroll;
   margin-bottom: 10px;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
 }
 
 .chat::-webkit-scrollbar {
@@ -289,6 +300,8 @@ body {
   background: #ffffff;
   width: 80%;
   padding: 16px 14px;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 
 .settings.active {

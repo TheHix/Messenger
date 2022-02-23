@@ -7,22 +7,22 @@ body {
     background: linear-gradient(90deg, #69b7eb, #b3dbd3, #f4d6db);
 }
 
-.container {
-    overflow: hidden;
-    max-width: 350px;
-    margin: 0 auto;
-    min-height: 533px;
-    position: relative;
-}
-
 .main.blur {
     filter: blur(3px);
 }
 
 .main {
+    display: flex;
+    flex-direction: column;
+    margin: 0px auto;
+    position: relative;
+    max-width: 350px;
+    min-height: 533px;
     background: #ffffff;
     padding: 15px;
-    width: 100%;
+    @media screen and (max-width:480px){
+        min-height: 100vh;
+    }
 }
 
 .buttons {
@@ -66,6 +66,7 @@ body {
     padding: 8px;
     overflow: scroll;
     margin-bottom: 10px;
+    flex: 1 1 auto;
 }
 
 .chat::-webkit-scrollbar {
@@ -198,6 +199,7 @@ body {
     background: #ffffff;
     width: 80%;
     padding: 16px 14px;
+    transition: all 0.3s ease-in-out;
 }
 
 .settings.active {

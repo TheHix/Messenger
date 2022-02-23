@@ -1,5 +1,5 @@
 import {PAGE, CHANGE, CONSTRUCT} from "./view.js";
-import {requestAuthenticationCode, requestMessage, requestUsername, changeUsername} from "./requests.js";
+import {requestAuthenticationCode, requestMessage, requestUsername, changeUsername} from "./network.js";
 import Cookies from 'js-cookie';
 render();
 function render() {

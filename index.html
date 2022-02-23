@@ -9,58 +9,56 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <div class="container">
-        <div class="main">
-            <div class="buttons">
-                <button class="buttons_btnSettings btn">настроки</button>
-                <button class="buttons_logInOut btn">Войти</button>
-            </div>
-            <div class="chat">
-                <div class="chatBox">
-                </div>
-            </div>
-            <div class="sendMessage">
-                <form action="#" class="sendMessage__bar">
-                    <input type="text" placeholder="сообщение.." class="sendMessage__input input">
-                    <button class="sendMessage__btn btn">
-                        <svg width="13" height="8" viewBox="0 0 13 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M4.10156 4.75781H0.289062V3.57812H4.10156V4.75781ZM10.6328 3.92188L5.46875 1.89844V0.414062L12.1406 3.36719V4.50781L5.46875 7.46875V5.96875L10.6328 3.92188Z" fill="black"/>
-                        </svg>                    
-                    </button>
-                </form>
+    <div class="main">
+        <div class="buttons">
+            <button class="buttons_btnSettings btn" data-path = "settings">настроки</button>
+            <button class="buttons_logInOut btn" data-path = "email">Войти</button>
+        </div>
+        <div class="chat">
+            <div class="chatBox">
             </div>
         </div>
-        <div class="settings pop-up_window">
-            <div class="settings__title title">Настроки</div>
-            <span class="settings__cross cross">+</span>
-            <div class="settings__subTitle subTitle">Имя в чате</div>
-            <form action="#" class = "settings__nameChoice nameChoice">
-                <input type="text" class="nameChoice__input input">
-                <button class="nameChoice__btn btn">
+        <div class="sendMessage">
+            <form action="#" class="sendMessage__bar">
+                <input type="text" placeholder="сообщение.." class="sendMessage__input input">
+                <button class="sendMessage__btn btn">
                     <svg width="13" height="8" viewBox="0 0 13 8" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M4.10156 4.75781H0.289062V3.57812H4.10156V4.75781ZM10.6328 3.92188L5.46875 1.89844V0.414062L12.1406 3.36719V4.50781L5.46875 7.46875V5.96875L10.6328 3.92188Z" fill="black"/>
-                    </svg>
+                    </svg>                    
                 </button>
             </form>
         </div>
-        <div class="LogInOut pop-up_window logWindow">
-            <div class="LogInOut__title title">Авторизация</div>
-            <span class="LogInOut__cross cross">+</span>
-            <div class = "LogInOut__subTitle subTitle">Почта:</div>
-            <form action="#" class = "LogInOut__authorizationForm authorization">
-                <input type="email" class="authorization__email input">
-                <button class="authorization__btn btn">Получить код</button>
-            </form>
-        </div>
-        <div class="enterCode pop-up_window logWindow">
-            <div class="enterCode__title title">Подтверждение</div>
-            <span class="enterCode__cross cross">+</span>
-            <div class = "enterCode__subTitle subTitle">Код:</div>
-            <form action="#" class = "enterCode__confirmationForm confirmationForm">
-                <input type="text" class="confirmationForm__code input">
-                <button class="confirmationForm__btn btn">войти</button>
-            </form>
-        </div>
+    </div>
+    <div class="settings pop-up_window" data-target = "sttings">
+        <div class="settings__title title">Настроки</div>
+        <span class="settings__cross cross">+</span>
+        <div class="settings__subTitle subTitle">Имя в чате</div>
+        <form action="#" class = "settings__nameChoice nameChoice">
+            <input type="text" class="nameChoice__input input">
+            <button class="nameChoice__btn btn">
+                <svg width="13" height="8" viewBox="0 0 13 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M4.10156 4.75781H0.289062V3.57812H4.10156V4.75781ZM10.6328 3.92188L5.46875 1.89844V0.414062L12.1406 3.36719V4.50781L5.46875 7.46875V5.96875L10.6328 3.92188Z" fill="black"/>
+                </svg>
+            </button>
+        </form>
+    </div>
+    <div class="LogInOut pop-up_window logWindow" data-target = "email">
+        <div class="LogInOut__title title">Авторизация</div>
+        <span class="LogInOut__cross cross">+</span>
+        <div class = "LogInOut__subTitle subTitle">Почта:</div>
+        <form action="#" class = "LogInOut__authorizationForm authorization" data-path = "enterCode">
+            <input type="email" class="authorization__email input">
+            <button class="authorization__btn btn">Получить код</button>
+        </form>
+    </div>
+    <div class="enterCode pop-up_window logWindow" data-target = "enterCode">
+        <div class="enterCode__title title">Подтверждение</div>
+        <span class="enterCode__cross cross">+</span>
+        <div class = "enterCode__subTitle subTitle">Код:</div>
+        <form action="#" class = "enterCode__confirmationForm confirmationForm">
+            <input type="text" class="confirmationForm__code input">
+            <button class="confirmationForm__btn btn">войти</button>
+        </form>
     </div>
     <template id="temp">
         <div class="chatBox__massage-block">
