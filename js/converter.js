@@ -8,6 +8,7 @@ export function createAddMessage(text, date, name = '', extraClass = 'my') {
     currentMessage.children[2].innerHTML = getTime(date);
 
     PAGE.CHAT_BOX.append(currentMessage);
+    moveScroll();
 }
 export function getTime(timeMessage) {
     const time = timeMessage === undefined ? new Date() : new Date(timeMessage);
@@ -17,6 +18,7 @@ export function getTime(timeMessage) {
 
     return `${hours}:${minutes}`;
 }
-export function moveScroll() {
+function moveScroll() {
+    console.log(PAGE.MESSAGE_BODY.scrollHeight);
     PAGE.MESSAGE_BODY.scrollTop = PAGE.MESSAGE_BODY.scrollHeight;
 }

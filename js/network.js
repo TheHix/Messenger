@@ -62,12 +62,6 @@ export async function requestMessage(token) {
     }
 }
 
-export function createTransferableMessage(token, message) {
-    const socket = new WebSocket(`ws://chat1-341409.oa.r.appspot.com/websockets?${token}`);
-    socket.onopen = () => socket.send(JSON.stringify({
-        text: message
-    }));
-    socket.onmessage = function (event) {
-        console.log(event.data);
-    };
-}
+// export function createTransferableMessage(token, message) {
+    
+// }
