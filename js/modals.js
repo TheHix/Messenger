@@ -32,6 +32,7 @@ export function modalWindowCallLogic() {
 
     PAGE.EXIT_BTN.forEach((event) => {
         event.addEventListener('click', (e) => {
+            console.log(e);
             e.currentTarget.parentElement.classList.remove('active');
             PAGE.MAIN_WINDOW.classList.remove('blur');
         });

@@ -6,9 +6,12 @@ body {
     font-size: 18px;
     background: linear-gradient(90deg, #69b7eb, #b3dbd3, #f4d6db);
 }
+
 .main.blur {
+    transition: all 0.3s ease-in-out;
     filter: blur(3px);
 }
+
 .main {
     display: flex;
     flex-direction: column;
@@ -17,7 +20,8 @@ body {
     min-height: 533px;
     background: #ffffff;
     padding: 15px;
-    @media screen and (max-width:480px){
+
+    @media screen and (max-width:480px) {
         min-height: 100vh;
     }
 }
@@ -172,10 +176,6 @@ body {
     color: #636363;
 }
 
-.settings {
-    display: none;
-}
-
 .settings.active> :first-child {
     margin-bottom: 16px;
 }
@@ -183,6 +183,7 @@ body {
 .settings.active> :not(:last-child) {
     margin-bottom: 12px;
 }
+
 .pop-up__window {
     border: 1px solid black;
     z-index: 2;
@@ -195,12 +196,6 @@ body {
     background: #ffffff;
     width: 270px;
     padding: 16px 14px;
-    transition: all 0.3s ease-in-out;
-}
-
-.settings.active {
-    display: block;
-    padding-top: 50px;
 }
 
 .title {
@@ -235,19 +230,6 @@ body {
     align-content: center;
     flex-direction: column;
 }
-
-.LogInOut {
-    display: none;
-
-    &__subTitle {
-        margin-bottom: 3px;
-    }
-}
-
-.LogInOut.active {
-    display: flex;
-}
-
 .authorization {
     &__email {
         margin-bottom: 7px;
@@ -258,15 +240,6 @@ body {
         width: 120px;
     }
 }
-
-.enterCode {
-    display: none;
-
-    &__subTitle {
-        margin-bottom: 3px;
-    }
-}
-
 .confirmationForm {
     &__code {
         margin-bottom: 8px;
@@ -278,7 +251,42 @@ body {
         height: 33px;
     }
 }
-
-.enterCode.active {
+.settings {
+    display: block;
+    padding-top: 50px;
+    opacity: 0;
+    visibility: hidden;
+}
+.settings.active {
+    opacity: 1;
+    visibility: visible;
+    transition: all 0.3s ease-in-out;
+}
+.LogInOut {
     display: flex;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease-in-out;
+    &__subTitle {
+        margin-bottom: 3px;
+    }
+}
+.LogInOut.active {
+    opacity: 1;
+    visibility: visible;
+    transition: all 0.3s ease-in-out;
+}
+.enterCode {
+    display: flex;
+    transition: all 0.3s ease-in-out;
+    opacity: 0;
+    visibility: hidden;
+    &__subTitle {
+        margin-bottom: 3px;
+    }
+}
+.enterCode.active {
+    transition: all 0.3s ease-in-out;
+    opacity: 1;
+    visibility: visible;
 }

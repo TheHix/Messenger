@@ -7,7 +7,7 @@ export function renderUsername(data) {
 }
 export function renderMessage(data) {
     PAGE.CHAT_BOX.innerHTML = "";
-
+    
     for (let item of data.messages){
         createAddMessage(item.text, item.createdAt, item.user.name, 'interlocutor');
     }
