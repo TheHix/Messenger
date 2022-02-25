@@ -1,13 +1,14 @@
 import {PAGE} from "./view.js";
 import {modalWindowCallLogic} from "./modals.js";
 import {createAddMessage, moveScroll} from "./converter.js";
-import {requestMessage, requestUsername} from "./network.js";
+import {requestMessage, requestUserData, createTransferableMessage} from "./network.js";
 import Cookies from 'js-cookie';
 modalWindowCallLogic();
 
-const token = Cookies.get('token');
-requestMessage(token);
-requestUsername(token);
+PAGE.TOKEN = Cookies.get('token');
+requestMessage(PAGE.TOKEN);
+requestUserData(PAGE.TOKEN);
+
 
 PAGE.MESSAGE_BAR.addEventListener('submit', (e) => {
     e.preventDefault();
@@ -17,5 +18,6 @@ PAGE.MESSAGE_BAR.addEventListener('submit', (e) => {
     createAddMessage(PAGE.INPUT_BAR.value);
     moveScroll();
 
+    createTransferableMessage(PAGE.TOKEN, PAGE.INPUT_BAR.value);
     PAGE.INPUT_BAR.value = "";
 });

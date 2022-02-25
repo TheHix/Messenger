@@ -19,7 +19,8 @@ export const PAGE = {
     CHAT_BOX: document.querySelector('.chatBox'),
     MESSAGE_BODY: document.querySelector('.chat'),
     NAME_FORM: document.querySelector('.nameChoice'),
-    NAME_INPUT: document.querySelector('.nameChoice__input')
+    NAME_INPUT: document.querySelector('.nameChoice__input'),
+    TOKEN: ''
 };
 
 export const URL = {

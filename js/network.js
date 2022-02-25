@@ -1,5 +1,5 @@
 import {URL} from "./view.js";
-import {renderMessage, renderUsername} from "./render.js";
+import {renderMessage, renderUserData} from "./render.js";
 export async function requestAuthenticationCode(email) {
     try {
         const response = await fetch(URL.USER, {
@@ -28,12 +28,12 @@ export async function changeUsername(username, token) {
             },
         });
         const json = await response.json();
-        console.log(JSON.stringify(json)); 
+        console.log(JSON.stringify(json));
     } catch (error) {
         console.error(error);
     }
 }
-export async function requestUsername(token) {
+export async function requestUserData(token) {
     try {
         const response = await fetch(URL.USER_ME, {
             method: 'GET',
@@ -42,7 +42,7 @@ export async function requestUsername(token) {
             }
         });
         const json = await response.json();
-        renderUsername(json);
+        renderUserData(json);
     } catch (error) {
         console.error(error);
     }
@@ -60,4 +60,14 @@ export async function requestMessage(token) {
     } catch (error) {
         console.error(error);
     }
+}
+
+export function createTransferableMessage(token, message) {
+    const socket = new WebSocket(`ws://chat1-341409.oa.r.appspot.com/websockets?${token}`);
+    socket.onopen = () => socket.send(JSON.stringify({
+        text: message
+    }));
+    socket.onmessage = function (event) {
+        console.log(event.data);
+    };
 }
