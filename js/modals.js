@@ -13,6 +13,7 @@ export function modalWindowCallLogic() {
         PAGE.MAIN_WINDOW.classList.add('blur');
         document.querySelector(`[data-target = ${pathSubmit}]`).classList.add('active');
     });
+    
     PAGE.BTN.forEach((event) => {
         event.addEventListener('click', (e) => {
             closeAllWindows();
@@ -34,4 +35,4 @@ function closeAllWindows() {
 export function closeCurrentWindow(elem) {
     elem.currentTarget.parentElement.classList.remove('active');
     PAGE.MAIN_WINDOW.classList.remove('blur');
-} 
+}
