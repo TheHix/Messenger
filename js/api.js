@@ -61,7 +61,3 @@ export async function requestMessage(token) {
         console.error(error);
     }
 }
-
-// export function createTransferableMessage(token, message) {
-    
-// }

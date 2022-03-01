@@ -1,21 +1,25 @@
 import {PAGE} from "./view.js";
-import {createAddMessage} from "./converter";
+import {storage} from "./storage.js";
+import {addMessage, Message} from "./converter.js";
+import Cookies from "js-cookie";
 export function renderUserData(data) {
     const username = data['name'] ?? 'Стив';
     PAGE.NAME_INPUT.value = username;
-    PAGE.INPUT_EMAIL.value = data.email;
+    Cookies.set('email', data.email);
 }
 export function renderMessage(data) {
-    PAGE.CHAT_BOX.innerHTML = "";
-    for (let item of data.messages){
-        let condition = item.user.email == PAGE.INPUT_EMAIL.value ? 'my' : 'interlocutor';
-        let username = item.user.email == PAGE.INPUT_EMAIL.value ? '' : item.user.name;
-        createAddMessage(item.text, item.createdAt, username, condition);
-    }
+    const initialData = data.messages.reverse().slice(0, 20);
+    storage.saveMessageHistory(data.messages.reverse().slice(20));
+    initialData.forEach((message) => {
+        let condition = message.user.email == Cookies.get('email') ? 'my' : 'interlocutor';
+        let username = message.user.email == Cookies.get('email') ? '' : message.user.name;
+        parametersMessage = new Message(message.text, message.createdAt, username, condition);
+        addMessage(parametersMessage, 'prepend');
+    });
 }
 export function renderCurrentMessage(data) {
-    console.log(data);
-    let condition = data.user.email == PAGE.INPUT_EMAIL.value ? 'my' : 'interlocutor';
-    let username = data.user.email == PAGE.INPUT_EMAIL.value ? '' : data.user.name;
-    createAddMessage(data.text, data.createdAt, username, condition);
+    let condition = data.user.email == Cookies.get('email') ? 'my' : 'interlocutor';
+    let username = data.user.email == Cookies.get('email') ? '' : data.user.name;
+    parametersMessage = new Message(data.text, data.createdAt, username, condition);
+    addMessage(parametersMessage, 'append');
 }
