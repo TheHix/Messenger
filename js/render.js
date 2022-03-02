@@ -8,7 +8,14 @@ export function renderUserData(data) {
     Cookies.set('email', data.email);
 }
 export function renderMessage(data, moving) {
-    const initialData = data.length > 20 ? data.slice(0, 20) : data;
+    let initialData;
+    if (data.length > 20){
+        initialData = data.slice(0, 20);
+    }
+    else {
+        initialData = data;
+        alert('Загружена вся истроя сообщений');
+    }
     storage.saveMessageHistory(data.slice(initialData.length));
     initialData.forEach((message) => {
         let condition = message.user.email == Cookies.get('email') ? 'my' : 'interlocutor';
