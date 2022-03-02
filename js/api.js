@@ -56,7 +56,7 @@ export async function requestMessage(token) {
             }
         });
         const json = await response.json();
-        renderMessage(json);
+        renderMessage(json.messages.reverse(), 'moveScroll');
     } catch (error) {
         console.error(error);
     }

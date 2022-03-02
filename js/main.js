@@ -1,14 +1,14 @@
 import {PAGE} from "./view.js";
 import {modalWindowCallLogic, closeCurrentWindow} from "./modals.js";
 import {requestMessage, requestUserData, changeUsername} from "./api.js";
-import {renderCurrentMessage} from "./render.js";
+import {renderCurrentMessage, renderMessagesOnScroll} from "./render.js";
 import Cookies from 'js-cookie';
+renderMessagesOnScroll();
 modalWindowCallLogic();
 
 const token = Cookies.get('token');
 requestMessage(token);
 requestUserData(token);
-
 const socket = getWebSocketConnectionAddress(token);
 function getWebSocketConnectionAddress(token) {
     return new WebSocket(`ws://chat1-341409.oa.r.appspot.com/websockets?${token}`);
@@ -19,7 +19,7 @@ function sendMessage(e) {
     if (!PAGE.INPUT_BAR.value) return;
     socket.send(JSON.stringify({text: PAGE.INPUT_BAR.value}));
     socket.onmessage = function (event) {
-        renderCurrentMessage(JSON.parse(event.data));
+        renderCurrentMessage(JSON.parse(event.data), 'moveScroll');
     };
     PAGE.MESSAGE_BAR.reset();
 }

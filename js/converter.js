@@ -1,14 +1,15 @@
 import {PAGE} from "./view.js";
-export function addMessage({text, date, name = '', extraClass = 'my'}, method) {
+export function addMessage({text, date, name = '', extraClass = 'my'}, method, moving) {
     let currentMessage = PAGE.TEMP.content.firstElementChild.cloneNode(true);
-
     currentMessage.classList.add(extraClass);
     currentMessage.children[0].innerHTML = name;
     currentMessage.children[1].innerHTML = text;
     currentMessage.children[2].innerHTML = getTime(date);
     method === 'append' ? PAGE.CHAT_BOX.append(currentMessage) : PAGE.CHAT_BOX.prepend(currentMessage);
-    moveScroll();
-}
+    if (moving == 'moveScroll') {
+        moveScroll();
+    }
+}   
 export function getTime(timeMessage) {
     const time = timeMessage === undefined ? new Date() : new Date(timeMessage);
     
@@ -17,7 +18,7 @@ export function getTime(timeMessage) {
 
     return `${hours}:${minutes}`;
 }
-function moveScroll() {
+export function moveScroll() {
     PAGE.MESSAGE_BODY.scrollTop = PAGE.MESSAGE_BODY.scrollHeight;
 }
 export class Message {
