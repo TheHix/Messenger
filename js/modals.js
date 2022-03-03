@@ -1,5 +1,6 @@
 import {PAGE} from "./view.js";
 import {requestAuthenticationCode} from "./api.js";
+import Cookies from 'js-cookie';
 export function modalWindowCallLogic() {
     PAGE.EMAIL_FORM.addEventListener('submit', (e) => {
         e.preventDefault();
@@ -16,6 +17,11 @@ export function modalWindowCallLogic() {
     
     PAGE.BTN.forEach((event) => {
         event.addEventListener('click', (e) => {
+            if (e.currentTarget == PAGE.LOG_BTN && e.currentTarget.innerHTML == 'Выйти'){
+                console.log('da');
+                Cookies.remove('token');
+                location.reload();
+            }
             closeAllWindows();
 
             let pathBtn = e.currentTarget.getAttribute('data-path');
