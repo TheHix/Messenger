@@ -11,7 +11,7 @@ export function modalWindowCallLogic() {
     PAGE.EMAIL_FORM.addEventListener('submit', sendAuthenticationCode);
 
     PAGE.BTN.forEach((event) => {
-        event.addEventListener('click', clickOnBtn);
+        event.addEventListener('click', openWindow);
     });
     PAGE.EXIT_BTN.forEach((event) => {
         event.addEventListener('click', closeCurrentWindow);
@@ -19,7 +19,7 @@ export function modalWindowCallLogic() {
 }
 
 
-function clickOnBtn(e){
+function openWindow(e){
     if (e.currentTarget == PAGE.LOG_BTN && e.currentTarget.innerHTML == 'Выйти'){
         console.log('da');
         Cookies.remove('token');
